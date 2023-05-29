@@ -1,4 +1,5 @@
 import Users from "../modules/userModels.js";
+import generateToken from "../ustulits/generateToken.js";
 
 export const register=async(req,res)=>{
     const {name,email,password,phone,address}=req.body;
@@ -17,7 +18,8 @@ export const register=async(req,res)=>{
                 email:user.email,
                 password:user.password,
                 phone:user.phone,
-                address:user.address
+                address:user.address,
+                token:generateToken(user._id),
             })
             
         }else{
@@ -35,7 +37,8 @@ export const login=async (req,res)=>{
             email:user.email,
             password:user.password,
             phone:user.phone,
-            address:user.address
+            address:user.address,
+            token:generateToken(user._id),
         })
         
     }else{
