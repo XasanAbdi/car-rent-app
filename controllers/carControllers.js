@@ -1,6 +1,17 @@
 import Cars from "../modules/carModel.js";
 
 
+export const getCars=async(res,req)=>{
+    try {
+        const cars=await Cars();
+    res.json(cars)
+
+    } catch (error) {
+    res.status(500).json({error:error.message})
+        
+    }
+}
+ 
 export const createcars=async(req,res)=>{
    try {
     const{image,model,amount,year,carSeats,kmperhr}=req.body;
