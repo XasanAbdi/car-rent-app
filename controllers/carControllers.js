@@ -3,7 +3,7 @@ import Cars from "../modules/carModel.js";
 
 export const getCars=async(res,req)=>{
     try {
-        const cars=await Cars();
+        const cars=await Cars.find();
     res.json(cars)
 
     } catch (error) {
