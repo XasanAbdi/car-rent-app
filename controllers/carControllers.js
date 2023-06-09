@@ -1,7 +1,7 @@
 import Cars from "../modules/carModel.js";
 
 
-export const getCars=async(res,req)=>{
+export const getCars=async(req,res)=>{
     try {
         const cars=await Cars.find();
     res.json(cars)
