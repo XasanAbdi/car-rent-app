@@ -4,7 +4,7 @@ import Cars from "../modules/carModel.js";
 
 export const getCars =async(req,res)=>{
    try {
-   const cars =await Cars.find()
+    const cars=await Cars.find();
     res.json(cars);
    } catch (error) {
     res.status(500).json({error:error.message});
